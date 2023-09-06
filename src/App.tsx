@@ -1,9 +1,11 @@
 import ListGroup from "./components/ListGroup";
 
+import { useState } from "react";
+
 function App() {
   let items = ["delhi", "mumbai", "ahmedabad", "rajkot", "vadodara"];
 
-  let selectedIndex = 0;
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   // items = [];
 
@@ -21,7 +23,7 @@ function App() {
             }
             key={item}
             onClick={() => {
-              selectedIndex = index;
+              setSelectedIndex(index);
             }}
           >
             {item}
